@@ -1,0 +1,25 @@
+{
+  "name": "morse-code-tdd",
+  "version": "1.0.0",
+  "description": "The aim of this project is to build a morse code translator using TDD.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reddah14/morse-code-tdd.git"
+  },
+  "keywords": [],
+  "author": "Smartinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Reddah14/morse-code-tdd/issues"
+  },
+  "homepage": "https://github.com/Reddah14/morse-code-tdd#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
+    "@types/jest": "^27.0.1",
+    "jest": "^27.1.0"
+  }
+}
