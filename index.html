@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./app.js" type="module" async defer></script>
+
+    <title>Morse Code Translator</title>
+  </head>
+  <body>
+    <h1>Code Morse Translator</h1>
+    <main class="row main">
+      <div class="row container-input">
+        <label
+          for="userInput"
+          class="container-input__label">Input</label>
+        <input
+          id="user-input"
+          type="text"
+          class="container-input__user"
+        >
+      </div>
+      <div class="row translate-btn">
+        <button id="translate-button" type="button" class="btn btn-success translate-btn">Translate</button>
+      </div>
+      <div class="row container-output">
+        <label
+          for="output"
+          class="container-output__label">Output</label>
+        <input
+          id="output"
+          type="text"
+          class="container-output__display"
+          readonly
+        >
+      </div>
+    </main>
+  </body>
+</html>

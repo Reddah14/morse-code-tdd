@@ -1,3 +1,3 @@
-export const getFullName = (fName, lName) => {
-  return fName + " " + lName;
+export const translateWordToMorse = (input) => {
+    return;
 }
