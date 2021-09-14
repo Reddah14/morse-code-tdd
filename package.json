@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The aim of this project is to build a morse code translator using TDD.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
