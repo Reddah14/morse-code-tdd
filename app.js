@@ -1,26 +1,21 @@
-import { translateWordToMorse } from "./translator.js";
+import { translateStringToMorse } from "./translator.js";
 
 // selectors
 let userInput = document.getElementById("user-input");
 let output = document.getElementById("output");
-const translateButton = document.getElementById("translate-button");
-
-// global vars
-let stringToTranslate = "";
+const clearButton = document.getElementById("translate-button");
 
 // functions
 const displayOutput = (translatedWordParam) => {
-  return (output.value = translatedWordParam);
+  return (output.value += translatedWordParam);
 };
 
 // event listeners
-translateButton.addEventListener("click", () => {
+clearButton.addEventListener("click", () => {
   output.value = "";
-  displayOutput(translateWordToMorse(stringToTranslate));
-  stringToTranslate = "";
   userInput.value = "";
 });
 
 userInput.addEventListener("input", (event) => {
-  stringToTranslate += event.data;
+  displayOutput(translateStringToMorse(event.data))
 });
