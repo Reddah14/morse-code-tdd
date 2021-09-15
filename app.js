@@ -9,8 +9,8 @@ const translateButton = document.getElementById("translate-button");
 let stringToTranslate = "";
 
 // functions
-const displayOutput = (stringTotranslateParam) => {
-  return (output.value = stringTotranslateParam);
+const displayOutput = (translatedWordParam) => {
+  return (output.value = translatedWordParam);
 };
 
 // event listeners
