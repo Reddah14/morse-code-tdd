@@ -1,7 +1,5 @@
 import morseCode from "./morse-code.js";
 
-let translatedString = "";
-
 const morseCodeKeys = Object.keys(morseCode);
 const morseCodeValues = Object.values(morseCode);
 
@@ -16,15 +14,16 @@ export const translateStringToMorse = (input) => {
     return undefined;
   }
   const inputToLowerCase = input.toLowerCase();
+
   for (let index = 0; index < inputToLowerCase.length; index++) {
-    const element = inputToLowerCase[index];
+    const character = inputToLowerCase[index];
 
     for (let index = 0; index < morseCodeKeys.length; index++) {
-      if (element === morseCodeKeys[index]) {
+      if (character === morseCodeKeys[index]) {
         translatedString += `${morseCodeValues[index]} `;
       }
     }
   }
-  
+
   return translatedString;
 };
