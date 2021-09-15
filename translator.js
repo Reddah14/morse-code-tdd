@@ -1,9 +1,19 @@
 import morseCode from "./morse-code.js";
 
-// console.log(morseCode);
-// console.log('values: ', Object.values(morseCode));
-// console.log('keys: ', Object.keys(morseCode));
+let translatedString = "";
+
+const morseCodeKeys = Object.keys(morseCode);
+const morseCodeValues = Object.values(morseCode);
 
 export const translateWordToMorse = (input) => {
-    return input;
+    for ( let index = 0; index < input.length; index++ ) {
+        const element = input[index];
+
+        for ( let index = 0; index < morseCodeKeys.length; index++ ) {
+            if ( element === morseCodeKeys[index] ) {
+                translatedString += morseCodeValues[index];
+            }
+        }
+    }
+    return translatedString;
 };
