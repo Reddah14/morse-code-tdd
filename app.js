@@ -6,6 +6,12 @@ let output = document.getElementById("output");
 const clearButton = document.getElementById("translate-button");
 
 // functions
+const refreshOutput = (toDisplayParam) => {
+  output.value = toDisplayParam;
+
+  return output.value;
+};
+
 const displayOutput = (translatedWordParam) => {
   return (output.value += translatedWordParam);
 };
@@ -17,5 +23,8 @@ clearButton.addEventListener("click", () => {
 });
 
 userInput.addEventListener("input", (event) => {
-  displayOutput(translateStringToMorse(event.data))
+  if (event.inputType === "deleteContentBackward") {
+    return refreshOutput(translateStringToMorse(userInput.value));
+  }
+  return displayOutput(translateStringToMorse(event.data, event. inputType));
 });
