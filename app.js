@@ -26,5 +26,5 @@ userInput.addEventListener("input", (event) => {
   if (event.inputType === "deleteContentBackward") {
     return refreshOutput(translateStringToMorse(userInput.value));
   }
-  return displayOutput(translateStringToMorse(event.data, event. inputType));
+  return displayOutput(translateStringToMorse(event.data));
 });
