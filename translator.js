@@ -3,17 +3,18 @@ import morseCode from "./morse-code.js";
 const morseCodeKeys = Object.keys(morseCode);
 const morseCodeValues = Object.values(morseCode);
 
-export const translateStringToMorse = (input) => {
+export const translateStringToMorse = (inputParam) => {
   let translatedString = "";
-  
-  if (input === null ) {
+
+  if (inputParam === null) {
     return undefined;
   }
 
-  if (input.length === 0) {
+  if (inputParam.length === 0) {
     return undefined;
   }
-  const inputToLowerCase = input.toLowerCase();
+
+  const inputToLowerCase = inputParam.toLowerCase();
 
   for (let index = 0; index < inputToLowerCase.length; index++) {
     const character = inputToLowerCase[index];
