@@ -1,3 +1,4 @@
+//TODO: control errors - translate morse code to words
 import morseCode from "./morse-code.js";
 
 const morseCodeKeys = Object.keys(morseCode);
