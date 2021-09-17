@@ -25,6 +25,13 @@ export const translateStringToMorse = (inputParam) => {
       }
     }
   }
-
-  return translatedString;
+  if (!translatedString) {
+    return "(Can't find this one😬)";
+  } else {
+    return translatedString;
+  }
 };
+
+/*
+  throw new Error("character to translate not found 👾");
+*/
