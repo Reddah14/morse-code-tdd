@@ -46,4 +46,15 @@ describe("TranslateMorseCode() function", () => {
     expect(result).toBe("... --- ... ");
   });
 
+  test("Returns a defined string when can't find a translation for the input", () => {
+    // arrange
+    const methodParam = "_";
+    const definedString = "(Can't find this one😬)";
+    // act
+    const result = translateStringToMorse(methodParam);
+    // assert
+    expect(result).toBe(definedString);
+  });
+
+
 });
