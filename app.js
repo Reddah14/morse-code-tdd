@@ -1,26 +1,39 @@
-import { translateWordToMorse } from "./translator.js";
+import { translateStringToMorse } from "./translator.js";
 
 // selectors
 let userInput = document.getElementById("user-input");
 let output = document.getElementById("output");
-const translateButton = document.getElementById("translate-button");
-
-// global vars
-let stringToTranslate = "";
+const clearButton = document.getElementById("translate-button");
 
 // functions
+const refreshOutput = (toDisplayParam) => {
+  output.value = toDisplayParam;
+
+  return output.value;
+};
+
 const displayOutput = (translatedWordParam) => {
-  return (output.value = translatedWordParam);
+  if (output.value === "There is no Output without an Input") {
+    output.value = "";
+  }
+  return (output.value += translatedWordParam);
 };
 
 // event listeners
-translateButton.addEventListener("click", () => {
+clearButton.addEventListener("click", () => {
   output.value = "";
-  displayOutput(translateWordToMorse(stringToTranslate));
-  stringToTranslate = "";
   userInput.value = "";
 });
 
 userInput.addEventListener("input", (event) => {
-  stringToTranslate += event.data;
+  if (event.inputType === "deleteContentBackward") {
+    refreshOutput( translateStringToMorse(userInput.value) );
+  } else {
+    displayOutput( translateStringToMorse( event.data ) );
+  }
+  /* 
+  try {
+  } catch (error) {
+    console.log(error);
+  } */
 });

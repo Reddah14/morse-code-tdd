@@ -1,19 +1,38 @@
+//TODO: control errors - translate morse code to words
 import morseCode from "./morse-code.js";
-
-let translatedString = "";
 
 const morseCodeKeys = Object.keys(morseCode);
 const morseCodeValues = Object.values(morseCode);
 
-export const translateWordToMorse = (input) => {
-    for ( let index = 0; index < input.length; index++ ) {
-        const element = input[index];
+export const translateStringToMorse = (inputParam) => {
+  let translatedString = "";
 
-        for ( let index = 0; index < morseCodeKeys.length; index++ ) {
-            if ( element === morseCodeKeys[index] ) {
-                translatedString += morseCodeValues[index];
-            }
-        }
+  if (inputParam === null) {
+    return undefined;
+  }
+
+  if (inputParam.length === 0) {
+    return "There is no Output without an Input";
+  }
+
+  const inputToLowerCase = inputParam.toLowerCase();
+
+  for (let index = 0; index < inputToLowerCase.length; index++) {
+    const character = inputToLowerCase[index];
+
+    for (let index = 0; index < morseCodeKeys.length; index++) {
+      if (character === morseCodeKeys[index]) {
+        translatedString += `${morseCodeValues[index]} `;
+      }
     }
+  }
+  if (!translatedString) {
+    return "(Can't find this one😬)";
+  } else {
     return translatedString;
+  }
 };
+
+/*
+  throw new Error("character to translate not found 👾");
+*/
