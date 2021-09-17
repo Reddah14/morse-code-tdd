@@ -24,7 +24,12 @@ clearButton.addEventListener("click", () => {
 
 userInput.addEventListener("input", (event) => {
   if (event.inputType === "deleteContentBackward") {
-    return refreshOutput(translateStringToMorse(userInput.value));
+    refreshOutput( translateStringToMorse(userInput.value) );
   }
-  return displayOutput(translateStringToMorse(event.data));
+  displayOutput( translateStringToMorse(event.data) );  
+/* 
+  try {
+  } catch (error) {
+    console.log(error);
+  } */
 });
