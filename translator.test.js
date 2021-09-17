@@ -38,15 +38,6 @@ describe("TranslateMorseCode() function", () => {
     expect(result).toBe("... --- ... ");
   });
 
-  test("Returns correct translation with upperCase parameter", () => {
-    // arrange
-    const methodParam = "SOS";
-    // act
-    const result = translateStringToMorse(methodParam);
-    // assert
-    expect(result).toBe("... --- ... ");
-  });
-
   test("Returns a defined string when can't find a translation for the input", () => {
     // arrange
     const methodParam = "_";
