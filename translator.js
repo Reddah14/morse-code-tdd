@@ -11,7 +11,7 @@ export const translateStringToMorse = (inputParam) => {
   }
 
   if (inputParam.length === 0) {
-    return undefined;
+    return "There is no Output without an Input";
   }
 
   const inputToLowerCase = inputParam.toLowerCase();
