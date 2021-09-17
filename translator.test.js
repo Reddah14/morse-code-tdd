@@ -10,13 +10,14 @@ describe("TranslateMorseCode() function", () => {
     expect(result).toBe(undefined);
   });
 
-  test("With an empty parameter returns undefined", () => {
+  test("With an empty parameter returns defined string", () => {
     // arrange
     const methodParam = "";
+    const definedString = "There is no Output without an Input";
     // act
     const result = translateStringToMorse(methodParam);
     // assert
-    expect(result).toBe(undefined);
+    expect(result).toBe(definedString);
   });
 
   test("Returns '.-' with 'a' parameter", () => {
