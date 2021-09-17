@@ -13,6 +13,9 @@ const refreshOutput = (toDisplayParam) => {
 };
 
 const displayOutput = (translatedWordParam) => {
+  if (output.value === "There is no Output without an Input") {
+    output.value = "";
+  }
   return (output.value += translatedWordParam);
 };
 
